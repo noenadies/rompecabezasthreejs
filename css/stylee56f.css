@@ -1,0 +1,176 @@
+    html,
+    body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        font-family: arial;
+        font-size: 12px;
+    }
+    
+    body {
+        min-height: 100%;
+        height: 100%;
+        position: relative;
+        background-color: #000;
+        color: #000;
+        overflow: hidden;
+        outline: none !important;
+        user-select: none;
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+    }
+    
+    #world {
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+    }
+    
+    .bigNav .navbar-collapse.collapse {
+        display: block!important;
+    }
+    
+    .bigNav .navbar-nav>li,
+    .bigNav .navbar-nav {
+        float: left !important;
+    }
+    
+    .bigNav .navbar-nav.navbar-right:last-child {
+        margin-right: -15px !important;
+    }
+    
+    .bigNav .navbar-right {
+        float: right!important;
+    }
+    
+    h4 {
+        color: #000;
+    }
+    
+    .bigNav .container {
+        margin-left: 1px !important;
+    }
+    
+    .bigNav .navbar-nav {
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+    
+    #createPuzzleNav {
+        position: absolute;
+        right: 10px;
+        top: 0;
+    }
+    
+    #create .glyphicon,
+    #help .glyphicon {
+        margin-top: 3px;
+        margin-right: 3px;
+        float: left;
+    }
+    
+    #help .glyphicon {
+        color: #2190D6;
+    }
+    
+    #create .glyphicon {
+        color: #539645;
+    }
+    
+    .bigNav .navbar-nav a {
+        font-weight: bold;
+        background: #f3f3f3;
+        padding-top: 5px !important;
+        padding-bottom: 5px !important;
+        border: 1px solid #dcdcdc;
+        margin-right: -1px;
+    }
+    
+    .bigNav .navbar-nav {
+        margin-top: 9px;
+    }
+    
+    #partsCount {
+        height: 32px;
+        font-weight: bold;
+        background: #f3f3f3;
+        border: 1px solid #dcdcdc;
+    }
+    
+    #mobilemenu {
+        width: 44px;
+        height: 40px;
+    }
+    
+    #mobilemenu .icon-bar {
+        background-color: #fff;
+    }
+    
+    #mobilemenu:focus,
+    #mobilemenu:hover {
+        background-position: 0 0 !important;
+    }
+    
+    #mobilemenu .icon-close {
+        display: none;
+        font-weight: bold;
+        font-size: 18px;
+    }
+    
+    @media (max-width: 991px) {
+        .navbar-header {
+            float: none;
+        }
+        .navbar-left,
+        .navbar-right {
+            float: none !important;
+        }
+        .navbar-toggle {
+            display: block;
+        }
+        .navbar-collapse {
+            border-top: 1px solid transparent;
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        }
+        .navbar-fixed-top {
+            top: 0;
+            border-width: 0 0 1px;
+        }
+        .navbar-collapse.collapse {
+            display: none!important;
+        }
+        .navbar-nav {
+            float: none!important;
+            margin-top: 7.5px;
+        }
+        .navbar-nav>li {
+            float: none;
+        }
+        .navbar-nav>li>a {
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+        .collapse.in {
+            display: block !important;
+        }
+    }
+    
+    #dropdown li {
+        border-bottom: 1px solid #dcdcdc;
+    }
+    
+    #dropdown {
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+    }
+    
+    .share_but {
+        float: left;
+        margin-right: 5px;
+    }
+    
+    #gameTime {
+        font-size: 18px;
+    }

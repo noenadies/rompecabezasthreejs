@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+
+
+<!-- Mirrored from lisgames.ru/puzzle/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 30 Apr 2019 23:31:14 GMT -->
+<head>
+    <title>3D puzzle</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/stylee56f.css?100417" />
+    <script type="text/javascript" src="three.min.js"></script>
+    <!--script type="text/javascript" src="download.min.js"></script-->
+    <script type="text/javascript" src="OBJLoader.js"></script>
+    <script type="text/javascript" src="jquery-3.1.1.min.js"></script>
+    <!-- script type="text/javascript" src="device.min.js"></script -->
+    <script type="text/javascript" src="config.js"></script>
+    <script type="text/javascript" src="part.js"></script>
+    <script type="text/javascript" src="main.js"></script>
+    <script type="text/javascript" src="controls.js"></script>
+</head>
+
+<body>
+    <div id="fb-root"></div>
+    <script type="text/javascript">
+        (function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) {
+                return;
+            }
+            js = d.createElement(s);
+            js.id = id;
+            js.src = "../../connect.facebook.net/en_US/all.js#xfbml=1";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+
+    <nav class="navbar navbar-default navbar-fixed-top " id="topbg">
+
+
+
+
+        <button type="button" class="btn-danger navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar" id="mobilemenu">
+                                    <span class="sr-only">Show navigation</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-close">X</span>
+                        </button>
+
+
+
+        <div class="bigNav">
+            <div class="container" style="padding-left:0; padding-right: 0;">
+                <ul class="nav navbar-nav navbar-default " id="fullScreenNav" style="display: none;">
+                    <li>
+                        <a href="#" id="fullScreen" title="Full Screen">
+                            <div class="glyphicon glyphicon-fullscreen"></div>
+                        </a>
+                    </li>
+
+                </ul>
+                <ul class="nav navbar-nav navbar-default  ">
+                    <li style="width: 73px;">
+                        <a href="#" id="timer">00:00:00</a>
+                    </li>
+                </ul>
+
+                <ul class="nav navbar-nav navbar-default " id="rotationNav">
+                    <li>
+                        <a href="#" id="rotation" title="Rotation On/Off">
+                            <div class="glyphicon glyphicon-retweet">
+                            </div>
+                            <img src="na.png" alt="not allowed" style="width: 19px; margin-left: -19px; margin-top: -4px; display:none" />
+                        </a>
+                    </li>
+
+                </ul>
+
+                <ul class="nav navbar-nav navbar-default hidden-xs hidden-sm">
+
+                    <li><a href="#" id="border">Border</a></li>
+                    <li><a href="#" id="middle">Middle</a></li>
+                    <li><a href="#" id="all">All</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-default hidden-xs hidden-sm">
+                    <li><a href="#" id="shuffle">Shuffle</a></li>
+                    <li><a href="#" id="preview">Preview</a></li>
+                    <li class="hidden-xs">
+                        <a href="#" id="help" data-toggle="modal" data-target="#helpModal">
+                            <div class="glyphicon glyphicon glyphicon-question-sign"></div> Help</a>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-default" id="selectCount">
+                    <li>
+                        <!-- a href="#" -->
+                        <select id="partsCount">    </select>
+                        <!-- /a -->
+                    </li>
+
+                </ul>
+
+                <ul class="nav navbar-nav navbar-default hidden-xs hidden-sm" id="share">
+                    <li class="hidden-xs">
+                        <a href="#">
+
+                            <div class="glyphicon  glyphicon-share"></div> Share
+
+                        </a>
+                    </li>
+
+
+                </ul>
+
+
+                <ul class="nav navbar-nav navbar-default hidden-sm hidden-xs" id="createPuzzleNav">
+                    <li>
+                        <a href="#" id="create" data-toggle="modal" data-target="#createPuzzleModal">
+                            <div class="glyphicon glyphicon-plus-sign"></div> Create Puzzle
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav hidden-lg hidden-md " id="dropdown">
+                <li>
+                    <a href="#" id="create2" data-toggle="modal" data-target="#createPuzzleModal">
+                        <div class="glyphicon glyphicon-plus-sign"></div> Create Puzzle
+                    </a>
+                </li>
+                <li><a href="#" id="shuffle2">Shuffle</a></li>
+                <li><a href="#" id="preview2">Preview</a></li>
+                <li><a href="#" id="border2">Show Border</a></li>
+                <li><a href="#" id="middle2">Show Middle</a></li>
+                <li><a href="#" id="all2">Show All</a></li>
+                <li id="share2">
+                    <a href="#">
+                        <div class="glyphicon  glyphicon-share"></div> Share</a>
+                </li>
+
+                <li style="border: 0">
+                    <a href="#" id="help2" data-toggle="modal" data-target="#helpModal">
+                        <div class="glyphicon glyphicon glyphicon-question-sign"></div> Help</a>
+                </li>
+
+
+            </ul>
+
+
+
+        </div>
+    </nav>
+
+    <div id="world"></div>
+
+
+
+
+    <div id="createPuzzleModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4>Choose an image</h4>
+                </div>
+                <div class="modal-body">
+
+                    <input id="imgUpload" type='file' accept="image/png, image/jpeg, image/gif" />
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="helpModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4>How to play</h4>
+                </div>
+                <div class="modal-body">
+                    <ul>
+                        <li>Change count of pieces in top menu selector.
+                            <br/><img src="select.jpg" alt="selector" />
+                        </li>
+                        <li>Press "Shuffle" to start game.</li>
+                        <li>Hold left mouse button to drag a piece.</li>
+                        <li>Right click, tap or left/right arrows to rotate a piece.</li>
+                        <li>Switch between border or middle pieces:
+                            <br/><img src="bma.jpg" alt="Switch between border or middle pieces" />
+                        </li>
+
+                    </ul><br/>
+                    <h4>Have a good game!</h4>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="doneModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4>Congratulations</h4>
+                </div>
+                <div class="modal-body">
+                    <h4>You folded the puzzle in<br/>
+
+                    </h4>
+                    <div id="gameTime"></div>
+
+
+                </div>
+                <div class="modal-footer">
+                    <div class="share_but">
+                        <a class="twitter-share-button" href="https://twitter.com/intent/tweet?text=Hello%20world">Tweet</a>
+                    </div>
+                    <div class="share_but">
+                        <div class="fb-share-button" data-href="" data-layout="button_count" data-size="small" data-mobile-iframe="true"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%2Fpuzzle%2F%23&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
+                    </div>
+                    <div class="share_but">
+                        <a href="https://wa.me/?text=urlencodedtext" class="wa-share-button"><img src="whatsapp.jpg" height="20" /></a>
+                    </div>
+
+
+
+
+
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="shareModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4>Share your puzzle</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="share_but" id="twitterholder">
+                        <a class="twitter-share-button2" href="https://twitter.com/intent/tweet?text=Hello%20world">Tweet</a>
+                    </div>
+                    <div class="share_but" id="fbholder">
+                        <div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button" data-size="large" data-mobile-iframe="true"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Поделиться</a></div>
+                    </div>
+                    <div class="share_but" id="waholder">
+                        <a href="https://wa.me/?text=urlencodedtext" class="wa-share-button2"><img src="whatsapp.jpg" height="20" /></a>
+                    </div>
+                    <div style='clear: both;'></div>
+
+
+                </div>
+                <div class="modal-footer">
+
+
+
+
+
+
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script type="text/javascript" src="bootstrap.min.js"></script>
+
+</body>
+
+
+<!-- Mirrored from lisgames.ru/puzzle/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 30 Apr 2019 23:31:25 GMT -->
+</html>
